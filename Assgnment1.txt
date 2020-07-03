@@ -1,0 +1,17 @@
+CREATE TABLE Employee_DETALS
+(
+  EMPLOYEE_ID  number(3),
+  EMPLOYEE_NAME varchar2(20),
+  EMPLOYEEADDRESS varchar(40),
+  DOB  DATE DEFAULT SYSDATE,
+  DOJ  DATE DEFAULT SYSDATE,
+  SALARY number(6)
+)
+
+INSERT INTO employee_detals values( 100, 'surya', 'kadiri', '08/15/1999', '05/29/2020', 25000)
+INSERT INTO employee_detals values( 101, 'sumanth', 'trupathi', '08/11/1999', '05/29/2019', 26000)
+INSERT INTO employee_detals values( 102, 'lal', 'trupathi', '08/12/1999', '05/29/2018', 24000)
+INSERT INTO employee_detals values( 103, 'sailu', 'vjayawada', '08/14/1999', '05/29/2017', 29000)
+INSERT INTO employee_detals values( 104, 'bharathi', 'chirala', '08/13/1999', '05/29/2016', 30000)
+
+SELECT *FROM employee_DETALS
