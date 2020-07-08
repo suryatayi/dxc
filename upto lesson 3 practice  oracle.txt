@@ -1,0 +1,62 @@
+SELECT *from departments;
+
+SELECT *from employees;
+
+SELECT first_name, last_name, phone_number
+FROM employees;
+
+SELECT last_name,salary,(salary*2)/5
+FROM employees
+
+SELECT last_name, salary, commission_pct
+FROM employees
+
+SELECT last_name, salary, commission_pct*2
+FROM employees
+
+SELECT last_name AS name, salary "annual salary", job_id jobno
+FROM employees
+
+SELECT last_name||  ' joining date is '   || hire_date joining
+FROM employees
+
+SELECT last_name||  q'[ join's on ]'   || hire_date  hired
+FROM employees
+
+SELECT  first_name
+FROM employees
+
+SELECT DISTINCT first_name
+FROM employees;
+
+DESC employees;
+
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date = 'MAY/21/2007'
+
+SELECT last_name,salary
+FROM employees
+WHERE salary IN(17000,24000)
+
+SELECT last_name,job_id
+FROM employees
+WHERE job_id LIKE '%RO%'
+
+SELECT last_name,manager_id
+FROM employees
+WHERE manager_id IS NULL
+
+SELECT last_name ,salary,department_id
+FROM employees
+WHERE department_id NOT IN 90
+
+SELECT last_name, department_id, salary
+FROM employees
+WHERE department_id = 60
+OR department_id = 80
+AND salary > 10000;
+
+SELECT last_name,salary annual,department_id
+FROM employees
+ORDER BY annual,department_id

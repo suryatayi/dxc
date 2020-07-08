@@ -1,0 +1,37 @@
+SELECT * FROM employees
+
+SELECT last_name, salary, commission_pct, NVL(salary+commission_pct,0)
+FROM employees
+
+
+SELECT last_name, salary, commission_pct, NVL2(commission_pct, null ,0)
+FROM employees
+
+
+SELECT last_name,first_name, NULLIF(LENGTH(last_name), LENGTH(first_name))
+FROM employees
+
+SELECT last_name, salary, commission_pct, COALESCE(commission_pct,salary,0)
+FROM employees
+
+SELECT * FROM employees
+
+SELECT last_name, TO_CHAR(hire_date, 'fmDD-MONTH-YEAR')
+FROM employees
+
+SELECT last_name, TO_CHAR(hire_date, 'DD/MM/YYYY')
+FROM employees
+WHERE hire_date < TO_DATE('17/06/2003', 'dd/mm/yyyy')
+
+SELECT last_name, salary,
+DECODE (TRUNC(salary/2000, 0),
+0, 0.00,
+1, 0.09,
+2, 0.20,
+3, 0.30,
+4, 0.40,
+5, 0.42,
+6, 0.44,
+0.45) TAX_RATE
+FROM employees
+WHERE department_id = 80;
