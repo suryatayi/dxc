@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User Form</title>
+<script type = "text/javascript">
+function display(){
+	var uname = document.forms[0].elements[0].value
+	var gender = document.forms[0].elements[1].value
+	var comment = document.forms[0].elements[2].value
+	var erruname1 = document.getElementById('erruname1')
+	var errugender = document.getElementById('errugender')
+	var errucomment = document.getElementById('errucomment')
+	if(uname.length == 0)
+		{
+			erruname1.innerHTML ="Name should not be empty"
+		}
+	else if(uname.length != 0)
+		{
+		erruname1.innerHTML ="Name :" +uname
+		}
+	with (document.forms[0])
+	{
+		if(gender[0].checked||gender[1].checked)
+		{
+			var gen=gender[0].checked?gender[0].value:gender[1].value
+			errugender.innerHTML = "Your Gender is : " + gen
+	        
+		}
+		else{
+			
+			errugender.innerHTML = "Please select the gender"
+		}
+	
+		if(select[0].checked||select[1].checked)
+		{
+			var com=select[0].checked?select[0].value:select[1].value
+			errucomment.innerHTML = "Your Comment is : " +com
+	        
+		}
+		else{
+			
+			errucomment.innerHTML = "Please select the comment"
+		}
+		
+
+		}
+}
+
+</script>
+</head>
+<body>
+<center>
+<font color = "blue">
+<h1>User Form</h1>
+</font>
+</center>
+<form >
+<table border  = "2" cellspacing = "5" cellpadding ="2" padding ="10" align ="center" bgcolor = "pink">
+	<tr>
+ 		<td>User Name:</td>
+ 		<td><input type = "text" name = "username" id = "username"></td>
+	</tr>
+	<tr>
+		<td>Spouse Name: </td>
+		<td><input type = "text" name = "spousename" id = "spousename"></td>
+	</tr>
+	<tr>
+		<td>Gender: </td>
+		<td>
+		<input type = "radio" name = "gender" id = "male" value = "Male">Male <br/>
+		<input type = "radio" name = "gender" id = "female" value = "Female">Female 
+		</td>
+	</tr>
+	<tr>
+		<td>Comments: </td>
+		<td>
+		<input type = "radio" name = "select" id = "like" value = "Like">Like <br/>
+		<input type = "radio" name = "select" id = "dontlike" value = "Don't Like">Don't Like </td>
+	</tr>	
+	<center>
+	<tr>
+		<td colspan = "2" align ="center"><input type = "Button" id = "submit"  value = "Submit" onclick = "display()" > </td>
+	</tr>		
+	</center>
+	<tr>	
+	<td colspan = "2" > <span id = "erruname1" name = "erruname1" > </span></td>
+	</tr>
+	<tr>	
+	<td colspan = "2" > <span id = "errugender" name = "errugender" > </span></td>
+	</tr>
+	<tr>	
+	<td colspan = "2" > <span id = "errucomment" name = "errucomment" > </span></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
